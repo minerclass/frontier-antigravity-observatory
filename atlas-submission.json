@@ -1,0 +1,18 @@
+{
+  "status": "ready for review; revision 3 local only",
+  "id": "antigravity-surface-arm",
+  "displayName": "Antigravity \u00b7 Surface ARM",
+  "model": "Gemini 3.8 Flash (High)",
+  "computer": "surface-arm",
+  "compileDate": "2026-10-14",
+  "revision": 3,
+  "repository": "minerclass/frontier-antigravity-observatory",
+  "pageUrl": "https://minerclass.github.io/frontier-antigravity-observatory/",
+  "dataUrls": [
+    "https://raw.githubusercontent.com/minerclass/frontier-antigravity-observatory/main/data.json"
+  ],
+  "dataFormat": "antigravity-frontier-observatory-v1",
+  "notesUrl": "https://raw.githubusercontent.com/minerclass/frontier-antigravity-observatory/main/NOTES.md",
+  "brief": "HARNESS.md (Frontier Benchmark Atlas brief, 13 Oct 2026)",
+  "publicationApprovedOn": null
+}
