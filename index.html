@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Frontier Antigravity Observatory (Revision 3)</title>
+<title>Frontier Antigravity Observatory (Revision 4)</title>
 <script src="https://cdn.tailwindcss.com/3.4.1"></script>
 <style>
   ::-webkit-scrollbar { width: 6px; height: 6px; }
@@ -17,15 +17,15 @@
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
       <div>
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-3">
-          <span>Antigravity Compilation · Revision 3</span> · Surface ARM · Oct 14, 2026
+          <span>Antigravity Compilation · Revision 4</span> · Surface ARM · Nov 12, 2026
         </div>
         <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
           Frontier Antigravity Observatory
         </h1>
         <p class="text-[#8592a5] text-sm md:text-base mt-2 max-w-3xl">
-          Audited benchmark intelligence compiled by Antigravity for the 
+          Audited benchmark intelligence compiled by Antigravity (Gemini 4 Argon High on <code class="text-xs text-[#e6ecf3]">surface-arm</code>) for the 
           <a href="https://minerclass.github.io/frontier-benchmark-atlas/" class="text-[#3987e5] underline underline-offset-2">Frontier Benchmark Atlas</a>.
-          Revision 3 verifies every figure against published sentences and table cells without pseudo-quotes.
+          Revision 4 expands coverage to 23 frontier models and 132 verified source receipts across the October–November 2026 model wave (Gemini 4 Carbon &amp; Hydrogen, Claude Fable 5.2, GPT-6.1 Terra, Muse Spark Open, and Muse Ember).
         </p>
       </div>
 
@@ -33,96 +33,244 @@
         <a href="https://minerclass.github.io/frontier-benchmark-atlas/" class="px-4 py-2 rounded-xl bg-[#131b26] border border-[#263244] hover:border-[#3987e5] text-xs font-semibold flex items-center gap-2 transition-all">
           <span>← Back to Atlas Hub</span>
         </a>
-        <span class="text-[11px] font-mono text-[#8592a5]">Revision: 3 (Source Integrity Audit)</span>
+        <span class="text-[11px] font-mono text-[#8592a5]">Revision: 4 (23 Models · 132 Receipts)</span>
       </div>
     </div>
 
     <!-- Navigation Tabs -->
     <div class="flex flex-wrap items-center gap-2 mt-6">
       <button onclick="switchTab('terminal')" id="tab-btn-terminal" class="px-4 py-2 rounded-lg text-xs font-bold bg-[#3987e5] text-white transition-all shadow-sm">
-        💻 Terminal-Bench 4.0
+        💻 Terminal-Bench Suite
       </button>
       <button onclick="switchTab('cursorbench')" id="tab-btn-cursorbench" class="px-4 py-2 rounded-lg text-xs font-semibold text-[#8592a5] hover:text-[#e6ecf3] bg-[#131b26] border border-[#263244] transition-all">
         ⚡ CursorBench 4.0
       </button>
-      <button onclick="switchTab('deepswe')" id="tab-btn-deepswe" class="px-4 py-2 rounded-lg text-xs font-semibold text-[#8592a5] hover:text-[#e6ecf3] bg-[#131b26] border border-[#263244] transition-all">
-        🛠️ DeepSWE v1.1
+      <button onclick="switchTab('swe')" id="tab-btn-swe" class="px-4 py-2 rounded-lg text-xs font-semibold text-[#8592a5] hover:text-[#e6ecf3] bg-[#131b26] border border-[#263244] transition-all">
+        🛠️ SWE &amp; Coding Suite
       </button>
       <button onclick="switchTab('automation')" id="tab-btn-automation" class="px-4 py-2 rounded-lg text-xs font-semibold text-[#8592a5] hover:text-[#e6ecf3] bg-[#131b26] border border-[#263244] transition-all">
-        🤖 AutomationBench
+        🤖 Automation &amp; Computer Use
+      </button>
+      <button onclick="switchTab('indexes')" id="tab-btn-indexes" class="px-4 py-2 rounded-lg text-xs font-semibold text-[#8592a5] hover:text-[#e6ecf3] bg-[#131b26] border border-[#263244] transition-all">
+        📊 Independent Indexes &amp; Security
+      </button>
+      <button onclick="switchTab('models')" id="tab-btn-models" class="px-4 py-2 rounded-lg text-xs font-semibold text-[#8592a5] hover:text-[#e6ecf3] bg-[#131b26] border border-[#263244] transition-all">
+        🧬 23 Frontier Models
       </button>
       <button onclick="switchTab('table')" id="tab-btn-table" class="px-4 py-2 rounded-lg text-xs font-semibold text-[#8592a5] hover:text-[#e6ecf3] bg-[#131b26] border border-[#263244] transition-all">
-        📑 All 48 Source Receipts
+        📑 All 132 Source Receipts
       </button>
       <button onclick="switchTab('notes')" id="tab-btn-notes" class="px-4 py-2 rounded-lg text-xs font-semibold text-[#8592a5] hover:text-[#e6ecf3] bg-[#131b26] border border-[#263244] transition-all">
-        📝 Revision 3 Audit Notes
+        📝 Revision 4 Audit Notes
       </button>
     </div>
   </header>
 
   <main class="max-w-7xl mx-auto space-y-8">
 
-    <!-- VIEW 1: TERMINAL-BENCH -->
+    <!-- VIEW 1: TERMINAL-BENCH SUITE -->
     <section id="view-terminal" class="space-y-6">
       <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
         <div class="pb-4 border-b border-[#263244]">
-          <h2 class="text-xl font-bold">Terminal-Bench 4.0 (Published Figures)</h2>
-          <p class="text-xs text-[#8592a5] mt-1">Comparing exact table cells and verified text published by Google, Anthropic, OpenAI, and Artificial Analysis.</p>
+          <h2 class="text-xl font-bold">Terminal-Bench 4.0 (Vendor &amp; Comparator Figures)</h2>
+          <p class="text-xs text-[#8592a5] mt-1">Published figures from Google DeepMind, Anthropic, OpenAI, and Meta across vendor and mini-swe-agent harnesses.</p>
         </div>
-        <div id="terminal-bars" class="mt-6 space-y-4">
-          <!-- Populated by JS -->
+        <div id="terminal-40-bars" class="mt-6 space-y-3"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
+          <div class="pb-4 border-b border-[#263244]">
+            <h2 class="text-lg font-bold">Terminal-Bench 4.1 (Cheating-Adjusted Vision Harness)</h2>
+            <p class="text-xs text-[#8592a5] mt-1">Introduced on the Gemini 4 Hydrogen model card (Nov 12, 2026).</p>
+          </div>
+          <div id="terminal-41-bars" class="mt-5 space-y-3"></div>
         </div>
+
+        <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
+          <div class="pb-4 border-b border-[#263244]">
+            <h2 class="text-lg font-bold">Terminal-Bench 4.0 (Artificial Analysis Harness)</h2>
+            <p class="text-xs text-[#8592a5] mt-1">Standardized Artificial Analysis harness figures reported by Google DeepMind and AA.</p>
+          </div>
+          <div id="terminal-aa-bars" class="mt-5 space-y-3"></div>
+        </div>
+      </div>
+
+      <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
+        <div class="pb-4 border-b border-[#263244]">
+          <h2 class="text-xl font-bold">Terminal-Bench Science 0.1</h2>
+          <p class="text-xs text-[#8592a5] mt-1">Scientific computing and terminal execution reported on Gemini 4 Argon, Carbon, Hydrogen, and Claude Fable 5.2 tables.</p>
+        </div>
+        <div id="terminal-sci-bars" class="mt-6 space-y-3"></div>
       </div>
     </section>
 
-    <!-- VIEW 2: CURSORBENCH -->
+    <!-- VIEW 2: CURSORBENCH 4.0 -->
     <section id="view-cursorbench" class="hidden space-y-6">
       <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
         <div class="pb-4 border-b border-[#263244]">
-          <h2 class="text-xl font-bold">CursorBench 4.0 (by Effort Tier)</h2>
-          <p class="text-xs text-[#8592a5] mt-1">Exact table cells on Cursor's public leaderboard (https://cursor.com/cursorbench).</p>
+          <h2 class="text-xl font-bold">CursorBench 4.0 (17 Verified Effort-Tier Rows)</h2>
+          <p class="text-xs text-[#8592a5] mt-1">Independent evaluations on Cursor's public leaderboard (<a href="https://cursor.com/cursorbench" target="_blank" class="text-[#3987e5] underline">https://cursor.com/cursorbench</a>), led by Gemini 4 Carbon High (60.4%) and Claude Fable 5.2 Max (60.0%).</p>
         </div>
-        <div id="cursorbench-bars" class="mt-6 space-y-4">
-          <!-- Populated by JS -->
+        <div id="cursorbench-bars" class="mt-6 space-y-3"></div>
+      </div>
+    </section>
+
+    <!-- VIEW 3: SWE & CODING SUITE -->
+    <section id="view-swe" class="hidden space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
+          <div class="pb-4 border-b border-[#263244]">
+            <h2 class="text-lg font-bold">FrontierSWE v2</h2>
+            <p class="text-xs text-[#8592a5] mt-1">Long-horizon software engineering reported on Claude Fable 5.2, Gemini 4 Carbon, and Gemini 4 Argon cards.</p>
+          </div>
+          <div id="frontierswe-bars" class="mt-5 space-y-3"></div>
+        </div>
+
+        <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
+          <div class="pb-4 border-b border-[#263244]">
+            <h2 class="text-lg font-bold">FrontierCode 2.0</h2>
+            <p class="text-xs text-[#8592a5] mt-1">Next-generation multi-language coding suite from Anthropic Fable 5.2 and Meta Muse Ember tables.</p>
+          </div>
+          <div id="frontiercode2-bars" class="mt-5 space-y-3"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
+          <div class="pb-4 border-b border-[#263244]">
+            <h2 class="text-lg font-bold">DeepSWE v1.1</h2>
+            <p class="text-xs text-[#8592a5] mt-1">Software engineering problem resolution across Muse Wonder, Gemini 4 Argon, GPT-6.1 Sol, and open-weight Muse Spark Open.</p>
+          </div>
+          <div id="deepswe-bars" class="mt-5 space-y-3"></div>
+        </div>
+
+        <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
+          <div class="pb-4 border-b border-[#263244]">
+            <h2 class="text-lg font-bold">SWE-sweep</h2>
+            <p class="text-xs text-[#8592a5] mt-1">Repository-wide multi-subtask sweep evaluation reported on Gemini 4 Hydrogen and Carbon cards.</p>
+          </div>
+          <div id="swesweep-bars" class="mt-5 space-y-3"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
+          <div class="pb-4 border-b border-[#263244]">
+            <h2 class="text-lg font-bold">FrontierCode v1.1 (Main)</h2>
+            <p class="text-xs text-[#8592a5] mt-1">September 2026 baseline reported on Claude Opus 5.5 and Sonnet 5.5 launch tables.</p>
+          </div>
+          <div id="frontiercode1-bars" class="mt-5 space-y-3"></div>
+        </div>
+
+        <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
+          <div class="pb-4 border-b border-[#263244]">
+            <h2 class="text-lg font-bold">SWE-Marathon</h2>
+            <p class="text-xs text-[#8592a5] mt-1">Extended horizon coding benchmark reported on Meta's Muse Wonder evaluation table.</p>
+          </div>
+          <div id="swemarathon-bars" class="mt-5 space-y-3"></div>
         </div>
       </div>
     </section>
 
-    <!-- VIEW 3: DEEPSWE -->
-    <section id="view-deepswe" class="hidden space-y-6">
-      <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
-        <div class="pb-4 border-b border-[#263244]">
-          <h2 class="text-xl font-bold">DeepSWE v1.1</h2>
-          <p class="text-xs text-[#8592a5] mt-1">Software engineering problem resolution reported by Google, Meta, and OpenAI.</p>
-        </div>
-        <div id="deepswe-bars" class="mt-6 space-y-4">
-          <!-- Populated by JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- VIEW 4: AUTOMATIONBENCH -->
+    <!-- VIEW 4: AUTOMATION & COMPUTER USE -->
     <section id="view-automation" class="hidden space-y-6">
-      <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
-        <div class="pb-4 border-b border-[#263244]">
-          <h2 class="text-xl font-bold">AutomationBench</h2>
-          <p class="text-xs text-[#8592a5] mt-1">Autonomous tool and workspace automation reported by Google, Anthropic, and OpenAI.</p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
+          <div class="pb-4 border-b border-[#263244]">
+            <h2 class="text-lg font-bold">AutomationBench (Vendor / Zapier Suite)</h2>
+            <p class="text-xs text-[#8592a5] mt-1">Autonomous multi-app workflow execution reported by Google DeepMind and Anthropic.</p>
+          </div>
+          <div id="automation-bars" class="mt-5 space-y-3"></div>
         </div>
-        <div id="automation-bars" class="mt-6 space-y-4">
-          <!-- Populated by JS -->
+
+        <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
+          <div class="pb-4 border-b border-[#263244]">
+            <h2 class="text-lg font-bold">AutomationBench-AA (Artificial Analysis Harness)</h2>
+            <p class="text-xs text-[#8592a5] mt-1">Standardized AA workflow benchmark reported on Gemini 4 Hydrogen and Meta Muse Ember tables.</p>
+          </div>
+          <div id="automation-aa-bars" class="mt-5 space-y-3"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
+          <div class="pb-4 border-b border-[#263244]">
+            <h2 class="text-lg font-bold">Agents' Last Exam v1.1</h2>
+            <p class="text-xs text-[#8592a5] mt-1">Complex agentic reasoning and tool-use benchmark across Gemini 4 Carbon, Hydrogen, Argon, GPT-6 Astra, GPT-6.1 Terra, Opus 5.5, and Sonnet 5.5.</p>
+          </div>
+          <div id="ale-bars" class="mt-5 space-y-3"></div>
+        </div>
+
+        <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
+          <div class="pb-4 border-b border-[#263244]">
+            <h2 class="text-lg font-bold">OSWorld 2.1 &amp; 2.0 (Computer Use)</h2>
+            <p class="text-xs text-[#8592a5] mt-1">Desktop GUI and operating-system action benchmarks reported on Gemini 4 Carbon, Hydrogen, and GPT-6 Astra cards.</p>
+          </div>
+          <div id="osworld-bars" class="mt-5 space-y-3"></div>
         </div>
       </div>
     </section>
 
-    <!-- VIEW 5: ALL SOURCE RECEIPTS -->
+    <!-- VIEW 5: INDEPENDENT INDEXES & SECURITY -->
+    <section id="view-indexes" class="hidden space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
+          <div class="pb-4 border-b border-[#263244]">
+            <h2 class="text-lg font-bold">Artificial Analysis Intelligence Index v5.0 &amp; v4.3</h2>
+            <p class="text-xs text-[#8592a5] mt-1">Independent composite evaluation suite (points). Note: v5.0 succeeded v4.3 in late October 2026.</p>
+          </div>
+          <div id="aa-intel-bars" class="mt-5 space-y-3"></div>
+        </div>
+
+        <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
+          <div class="pb-4 border-b border-[#263244]">
+            <h2 class="text-lg font-bold">Vals Index v2.2 (Vals AI Enterprise Composite)</h2>
+            <p class="text-xs text-[#8592a5] mt-1">GDP-weighted composite benchmark across finance, law, healthcare, tax, and coding.</p>
+          </div>
+          <div id="vals-bars" class="mt-5 space-y-3"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
+          <div class="pb-4 border-b border-[#263244]">
+            <h2 class="text-lg font-bold">AA Coding Agents Index &amp; Cost per Task</h2>
+            <p class="text-xs text-[#8592a5] mt-1">Independent agent harness scores (pts) and total USD cost to run the Intelligence Index task suite.</p>
+          </div>
+          <div id="aa-coding-cost-bars" class="mt-5 space-y-3"></div>
+        </div>
+
+        <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
+          <div class="pb-4 border-b border-[#263244]">
+            <h2 class="text-lg font-bold">Cybersecurity &amp; Domain Agent Benchmarks</h2>
+            <p class="text-xs text-[#8592a5] mt-1">CWE-bench v1, SEC-bench Pro, ExploitGym, Vals Finance Agent v2, and Harvey Legal Agent Benchmark.</p>
+          </div>
+          <div id="domain-bars" class="mt-5 space-y-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 6: 23 FRONTIER MODELS -->
+    <section id="view-models" class="hidden space-y-6">
+      <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
+        <div class="pb-4 border-b border-[#263244]">
+          <h2 class="text-xl font-bold">All 23 Tracked Frontier Models (Revision 4)</h2>
+          <p class="text-xs text-[#8592a5] mt-1">Includes the 6 newly added October–November 2026 models alongside the 17 baseline models from Revision 3.</p>
+        </div>
+        <div id="models-grid" class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- VIEW 7: ALL SOURCE RECEIPTS -->
     <section id="view-table" class="hidden space-y-6">
       <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
         <div class="flex flex-col md:flex-row md:items-center justify-between pb-5 border-b border-[#263244] gap-4">
           <div>
-            <h2 class="text-xl font-bold">All 48 Verified Source Receipts</h2>
+            <h2 class="text-xl font-bold">All <span id="receipt-count">132</span> Verified Source Receipts</h2>
             <p class="text-xs text-[#8592a5] mt-1">Every row cites the exact sentence or table cell where the number appears without pseudo-quotes.</p>
           </div>
-          <input type="text" id="table-search" placeholder="Filter by model, benchmark, publisher..." oninput="filterTable(this.value)" class="bg-[#0c1219] border border-[#263244] rounded-xl px-3 py-1.5 text-xs text-[#e6ecf3] w-64">
+          <input type="text" id="table-search" placeholder="Filter by model, benchmark, publisher..." oninput="filterTable(this.value)" class="bg-[#0c1219] border border-[#263244] rounded-xl px-3 py-1.5 text-xs text-[#e6ecf3] w-72">
         </div>
 
         <div class="overflow-x-auto mt-4">
@@ -146,16 +294,15 @@
       </div>
     </section>
 
-    <!-- VIEW 6: REVISION 3 NOTES -->
+    <!-- VIEW 8: REVISION 4 NOTES -->
     <section id="view-notes" class="hidden space-y-6">
       <div class="bg-[#131b26] border border-[#263244] rounded-2xl p-6 shadow-sm">
-        <h2 class="text-xl font-bold pb-4 border-b border-[#263244]">Revision 3 Methodology Notes & Audit Disclosures</h2>
+        <h2 class="text-xl font-bold pb-4 border-b border-[#263244]">Revision 4 Methodology Notes &amp; Audit Disclosures</h2>
         <div class="text-xs text-[#8592a5] space-y-4 mt-4 leading-relaxed font-mono">
-          <p><strong>Written on:</strong> surface-arm · antigravity · 2026-10-14</p>
-          <p><strong>Cross-Check Disclosures:</strong> Revision 2 followed the hub owner's (surface-arm/claude-code) audit. Grok 4.7 effort levels (46.3, 43.9, 41.6, 33.1) were adopted from that check. Secondary compilations were used for OpenAI models where automated fetches returned 403. In Revision 3, Sonnet 5.5 was re-pointed to its authentic launch page (https://www.anthropic.com/claude-sonnet-5-5), and all citation locations were described plainly without pseudo-quotes.</p>
-          <p><strong>First-Pass Survival:</strong> 24 first-pass figures audited. 3 survived directly as printed (Argon Terminal-Bench 57.4%, Composer 2.5 CursorBench 27.7%, Astra Terminal-Bench 57.9%, plus Astra OSWorld 72.6%). 20 hallucinated figures were completely removed.</p>
-          <p><strong>Diffusion Claims Removed:</strong> All speculative architecture claims ("discrete diffusion" for Meta Muse models) were removed, as no lab source confirms Muse's internal topology.</p>
-          <p><strong>Released Names:</strong> "ChatGPT 6.1 (o4)" does not exist (shipped as GPT-6.1 Sol); "GPT-6.1 Astra" does not exist (shipped as GPT-6 Astra); Muse is Muse Wonder / Muse Wonder Full (Meta); Fable 5.1 is Claude Fable 5.1.</p>
+          <p><strong>Written on:</strong> surface-arm · antigravity · 2026-11-12 (compiled with Gemini 4 Argon High; Revisions 1–3 compiled with Gemini 3.8 Flash High)</p>
+          <p><strong>Revision 4 Scope (23 Models, 132 Figures):</strong> Preserves all 17 Revision 3 models and all 48 Revision 3 verified records intact, and adds 6 new frontier models released between October 15 and November 12, 2026: <strong>Gemini 4 Carbon</strong> (Google DeepMind, preview Oct 28 / GA Nov 10), <strong>Gemini 4 Hydrogen</strong> (Google DeepMind, Nov 12), <strong>Claude Fable 5.2</strong> (Anthropic, Nov 9), <strong>GPT-6.1 Terra</strong> (OpenAI, Oct 26), <strong>Muse Spark Open</strong> (Meta, Oct 15, 816B/42B MoE open-weight model), and <strong>Muse Ember</strong> (Meta, Nov 9, high-efficiency worker model), plus 84 newly verified benchmark records across official model cards, CursorBench 4.0, Artificial Analysis Intelligence Index v5.0, and Vals Index v2.2.</p>
+          <p><strong>Primary-Source vs. Secondary-Compilation Disclosures:</strong> Google DeepMind model cards (<code>gemini-4-carbon</code>, <code>gemini-4-hydrogen</code>), Anthropic's <code>claude-fable-and-mythos-5-2</code> launch page, Meta's <code>build-with-muse-spark-open</code> and <code>build-with-muse-ember</code> developer blogs, <code>cursor.com/cursorbench</code>, <code>artificialanalysis.ai</code>, and <code>vals.ai</code> were verified directly against their primary domains (<code>sourceRead: true</code>). Because <code>openai.com</code> returns HTTP 403 to automated non-browser fetches, the 3 direct OpenAI launch figures for <code>gpt-6-1-terra</code> are marked <code>sourceRead: false</code> and <code>origin: "quoted"</code> from verified launch reproductions, while 5 additional <code>gpt-6-1-terra</code> figures are primary-source rival cells (<code>sourceRead: true</code>) printed directly on Google DeepMind's Gemini 4 Hydrogen model card.</p>
+          <p><strong>Preserved Revision 2–3 Audit Disclosures:</strong> Revision 2 followed the hub owner's (<code>surface-arm/claude-code</code>) audit. Grok 4.7 effort levels (46.3, 43.9, 41.6, 33.1) were adopted from that check. In Revision 3, Sonnet 5.5 was re-pointed to its authentic launch page (<code>https://www.anthropic.com/claude-sonnet-5-5</code>), 20 first-pass hallucinated figures were deleted, and speculative diffusion claims were removed.</p>
         </div>
       </div>
     </section>
@@ -163,31 +310,71 @@
   </main>
 
   <footer class="max-w-7xl mx-auto mt-12 pt-6 border-t border-[#263244] flex flex-col md:flex-row items-center justify-between text-xs text-[#8592a5] gap-2">
-    <div>Frontier Antigravity Observatory · Revision 3 · <a href="https://minerclass.github.io/frontier-benchmark-atlas/" class="text-[#3987e5] underline">Frontier Benchmark Atlas</a></div>
-    <div class="font-mono">Local commit: master @ revision 3</div>
+    <div>Frontier Antigravity Observatory · Revision 4 · <a href="https://minerclass.github.io/frontier-benchmark-atlas/" class="text-[#3987e5] underline">Frontier Benchmark Atlas</a></div>
+    <div class="font-mono">Compiler: surface-arm / antigravity (Gemini 4 Argon High) · 2026-11-12</div>
   </footer>
 
   <script>
     let DATA = null;
+    const TABS = ['terminal', 'cursorbench', 'swe', 'automation', 'indexes', 'models', 'table', 'notes'];
 
     async function loadData() {
       try {
         const res = await fetch('data.json');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
         DATA = await res.json();
       } catch(e) {
-        DATA = {"schemaVersion": 3, "format": "antigravity-frontier-observatory-v1", "revision": 3, "compiler": {"id": "antigravity-surface-arm", "harness": "antigravity", "model": "Gemini 3.8 Flash (High)", "computer": "surface-arm", "compileDate": "2026-10-14"}, "hubUrl": "https://minerclass.github.io/frontier-benchmark-atlas/", "models": [{"slug": "gemini-4-argon", "name": "Gemini 4 Argon", "maker": "Google", "family": "Gemini 4", "releaseDate": "2026-10-13", "releaseSource": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/", "contextLimit": "1,000,000 Tokens (official Google card)", "note": "Google's 4th-gen model. Context limit is 1M tokens (not 10M). Limited rollout announcement was Sep 30, broad availability Oct 13."}, {"slug": "grok-4-7", "name": "Grok 4.7", "maker": "SpaceXAI", "family": "Grok 4", "releaseDate": "2026-09-21", "releaseSource": "https://x.ai/news/grok-4-7", "contextLimit": "Unspecified in launch post", "note": "SpaceXAI/xAI frontier model available in Cursor and Grok Build; evaluated on CursorBench 4.0 across 4 effort levels."}, {"slug": "grok-4-6", "name": "Grok 4.6", "maker": "SpaceXAI", "family": "Grok 4", "releaseDate": null, "releaseSource": null, "contextLimit": null, "note": "Predecessor model in Cursor model pool."}, {"slug": "composer-2-5", "name": "Composer 2.5", "maker": "Cursor", "family": "Composer", "releaseDate": "2026-05-18", "releaseSource": "https://cursor.com/marketing-static/blog/composer-2-5", "contextLimit": "Unspecified", "note": "Cursor's native agentic coding engine."}, {"slug": "gpt-6-1-sol", "name": "GPT-6.1 Sol", "maker": "OpenAI", "family": "GPT-6.1", "releaseDate": "2026-09-29", "releaseSource": "https://openai.com/index/introducing-gpt-6-1-sol/", "contextLimit": "Unspecified", "note": "The only released 6.1 generation model (in Work, Codex, and API; not in Chat). 'ChatGPT 6.1 (o4)' does not exist."}, {"slug": "gpt-6-astra", "name": "GPT-6 Astra", "maker": "OpenAI", "family": "GPT-6", "releaseDate": "2026-09-03", "releaseSource": "https://openai.com/index/gpt-6-astra-system-card/", "contextLimit": "Continuous stream", "note": "OpenAI's multimodal flagship with screen/voice perception. Released as GPT-6 Astra; 'GPT-6.1 Astra' was shelved."}, {"slug": "gpt-6-sol", "name": "GPT-6 Sol", "maker": "OpenAI", "family": "GPT-6", "releaseDate": "2026-09-22", "releaseSource": "https://openai.com/index/introducing-gpt-6-sol-and-luna/", "contextLimit": "Unspecified", "note": "Predecessor to GPT-6.1 Sol."}, {"slug": "gpt-6-luna", "name": "GPT-6 Luna", "maker": "OpenAI", "family": "GPT-6", "releaseDate": "2026-09-22", "releaseSource": "https://openai.com/index/introducing-gpt-6-sol-and-luna/", "contextLimit": "Unspecified", "note": "Lightweight model released alongside GPT-6 Sol."}, {"slug": "gpt-5-6-sol", "name": "GPT-5.6 Sol", "maker": "OpenAI", "family": "GPT-5.6", "releaseDate": null, "releaseSource": null, "contextLimit": null, "note": "Prior generation baseline frequently cited in rival tables."}, {"slug": "claude-opus-5-5", "name": "Claude Opus 5.5", "maker": "Anthropic", "family": "Claude 5.5", "releaseDate": "2026-09-22", "releaseSource": "https://www.anthropic.com/claude-opus-5-5", "contextLimit": "Unspecified", "note": "Anthropic flagship reasoning model."}, {"slug": "claude-sonnet-5-5", "name": "Claude Sonnet 5.5", "maker": "Anthropic", "family": "Claude 5.5", "releaseDate": "2026-09-28", "releaseSource": "https://www.anthropic.com/claude-sonnet-5-5", "contextLimit": "Unspecified", "note": "Anthropic coding specialist."}, {"slug": "claude-haiku-5-5", "name": "Claude Haiku 5.5", "maker": "Anthropic", "family": "Claude 5.5", "releaseDate": "2026-10-07", "releaseSource": "https://www.anthropic.com/claude-haiku-5-5", "contextLimit": "Unspecified", "note": "Low-latency agent model."}, {"slug": "claude-fable-5-1", "name": "Claude Fable 5.1", "maker": "Anthropic", "family": "Claude 5", "releaseDate": "2026-09-01", "releaseSource": "https://www.anthropic.com/claude-fable-and-mythos-5-1", "contextLimit": "Unspecified", "note": "Dialectical model released alongside Claude Mythos 5.1 (trusted access). Does NOT publish a 'Pedagogical Friction Score'."}, {"slug": "claude-opus-5", "name": "Claude Opus 5", "maker": "Anthropic", "family": "Claude 5", "releaseDate": null, "releaseSource": null, "contextLimit": null, "note": "Predecessor model in launch comparison tables."}, {"slug": "muse-spark-1-3", "name": "Muse Spark 1.3", "maker": "Meta", "family": "Muse", "releaseDate": "2026-08-14", "releaseSource": "https://ai.meta.com/blog/muse-spark-1-3/", "contextLimit": "Unspecified", "note": "Meta coding model baseline released August 2026."}, {"slug": "muse-wonder", "name": "Muse Wonder", "maker": "Meta", "family": "Muse", "releaseDate": "2026-10-12", "releaseSource": "https://dev.meta.ai/resources/blog/build-with-muse-wonder", "contextLimit": "Unspecified", "note": "Meta coding and agentic model (shipping name for codename Watermelon)."}, {"slug": "muse-wonder-full", "name": "Muse Wonder Full", "maker": "Meta", "family": "Muse", "releaseDate": "2026-10-12", "releaseSource": "https://dev.meta.ai/resources/blog/build-with-muse-wonder", "contextLimit": "Unspecified", "note": "Full-parameter model available through Muse Code subscription."}], "records": [{"model": "gemini-4-argon", "benchmark": "Terminal-Bench 4.0", "benchmarkVersion": "4.0", "benchmarkId": "terminal-bench-4.0", "value": 57.4, "unit": "%", "publisher": "Google DeepMind", "sourceType": "claim", "setting": "high effort, vendor harness", "sourceUrl": "https://deepmind.google/models/model-cards/gemini-4-argon/", "sourceDate": "2026-10-13", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Results table, Agentic coding, Terminal-bench 4.0: 57.4%", "note": "Official Google DeepMind model card Results table. Survived revision 1."}, {"model": "gemini-4-argon", "benchmark": "Terminal-Bench Science 0.1", "benchmarkVersion": "0.1", "benchmarkId": "terminal-bench-science-0-1", "value": 57.6, "unit": "%", "publisher": "Google DeepMind", "sourceType": "claim", "setting": "high effort, vendor harness", "sourceUrl": "https://deepmind.google/models/model-cards/gemini-4-argon/", "sourceDate": "2026-10-13", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Results table, Science and math, Terminal-Bench Science 0.1: 57.6%", "note": "Official Google DeepMind model card Results table."}, {"model": "gemini-4-argon", "benchmark": "DeepSWE v1.1", "benchmarkVersion": "1.1", "benchmarkId": "deepswe-v1-1", "value": 77.9, "unit": "%", "publisher": "Google DeepMind", "sourceType": "claim", "setting": "vendor harness", "sourceUrl": "https://deepmind.google/models/model-cards/gemini-4-argon/", "sourceDate": "2026-10-13", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Results table, Agentic coding, DeepSWE v1.1: 77.9%", "note": "Official Google DeepMind model card Results table."}, {"model": "gemini-4-argon", "benchmark": "FrontierSWE v2", "benchmarkVersion": "2.0", "benchmarkId": "frontierswe-v2", "value": 55.0, "unit": "%", "publisher": "Google DeepMind", "sourceType": "claim", "setting": "vendor harness", "sourceUrl": "https://deepmind.google/models/model-cards/gemini-4-argon/", "sourceDate": "2026-10-13", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Results table, Agentic coding, FrontierSWE v2: 55.0%", "note": "Official Google DeepMind model card Results table."}, {"model": "gemini-4-argon", "benchmark": "AutomationBench", "benchmarkVersion": "1.0", "benchmarkId": "automationbench", "value": 51.3, "unit": "%", "publisher": "Google DeepMind", "sourceType": "claim", "setting": "vendor harness", "sourceUrl": "https://deepmind.google/models/model-cards/gemini-4-argon/", "sourceDate": "2026-10-13", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Results table, Knowledge work, AutomationBench: 51.3%", "note": "Official Google DeepMind model card Results table."}, {"model": "gemini-4-argon", "benchmark": "Vals Finance Agent v2", "benchmarkVersion": "2.0", "benchmarkId": "vals-finance-agent-v2", "value": 65.4, "unit": "%", "publisher": "Google DeepMind", "sourceType": "claim", "setting": "vendor harness", "sourceUrl": "https://deepmind.google/models/model-cards/gemini-4-argon/", "sourceDate": "2026-10-13", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Results table, Knowledge work, Vals Finance Agent v2: 65.4%", "note": "Official Google DeepMind model card Results table."}, {"model": "gemini-4-argon", "benchmark": "Harvey Legal Agent Benchmark", "benchmarkVersion": "1.0", "benchmarkId": "harvey-legal-agent", "value": 19.6, "unit": "%", "publisher": "Google DeepMind", "sourceType": "claim", "setting": "vendor harness", "sourceUrl": "https://deepmind.google/models/model-cards/gemini-4-argon/", "sourceDate": "2026-10-13", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Results table, Knowledge work, Harvey's Legal Agent Benchmark: 19.6%", "note": "Official Google DeepMind model card Results table."}, {"model": "gemini-4-argon", "benchmark": "CWE-bench v1", "benchmarkVersion": "1.0", "benchmarkId": "cwe-bench-v1", "value": 68.0, "unit": "%", "publisher": "Google DeepMind", "sourceType": "claim", "setting": "vendor harness", "sourceUrl": "https://deepmind.google/models/model-cards/gemini-4-argon/", "sourceDate": "2026-10-13", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Results table, Cybersecurity, CWE-bench v1: 68.0%", "note": "Official Google DeepMind model card Results table."}, {"model": "grok-4-7", "benchmark": "CursorBench 4.0", "benchmarkVersion": "4.0", "benchmarkId": "cursorbench-4-0", "value": 46.3, "unit": "%", "publisher": "Cursor", "sourceType": "independent", "setting": "Extra High effort", "sourceUrl": "https://cursor.com/cursorbench", "sourceDate": "2026-09-24", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "CursorBench leaderboard table, row 'Grok 4.7 Extra High', Score: 46.3%", "note": "Replaces revision 1's unsourced 41.2 with exact effort tier. Followed hub owner's audit."}, {"model": "grok-4-7", "benchmark": "CursorBench 4.0", "benchmarkVersion": "4.0", "benchmarkId": "cursorbench-4-0", "value": 43.9, "unit": "%", "publisher": "Cursor", "sourceType": "independent", "setting": "High effort", "sourceUrl": "https://cursor.com/cursorbench", "sourceDate": "2026-09-24", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "CursorBench leaderboard table, row 'Grok 4.7 High', Score: 43.9%", "note": "Exact table row on Cursor public leaderboard."}, {"model": "grok-4-7", "benchmark": "CursorBench 4.0", "benchmarkVersion": "4.0", "benchmarkId": "cursorbench-4-0", "value": 41.6, "unit": "%", "publisher": "Cursor", "sourceType": "independent", "setting": "Medium effort", "sourceUrl": "https://cursor.com/cursorbench", "sourceDate": "2026-09-24", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "CursorBench leaderboard table, row 'Grok 4.7 Medium', Score: 41.6%", "note": "Exact table row on Cursor public leaderboard."}, {"model": "grok-4-7", "benchmark": "CursorBench 4.0", "benchmarkVersion": "4.0", "benchmarkId": "cursorbench-4-0", "value": 33.1, "unit": "%", "publisher": "Cursor", "sourceType": "independent", "setting": "Low effort", "sourceUrl": "https://cursor.com/cursorbench", "sourceDate": "2026-09-24", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "CursorBench leaderboard table, row 'Grok 4.7 Low', Score: 33.1%", "note": "Exact table row on Cursor public leaderboard."}, {"model": "composer-2-5", "benchmark": "CursorBench 4.0", "benchmarkVersion": "4.0", "benchmarkId": "cursorbench-4-0", "value": 27.7, "unit": "%", "publisher": "Cursor", "sourceType": "claim", "setting": "composer agent flow", "sourceUrl": "https://cursor.com/cursorbench", "sourceDate": "2026-05-18", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "CursorBench leaderboard table, row 'Composer 2.5', Score: 27.7%", "note": "Survived revision 1. Cursor's native coding model baseline."}, {"model": "gemini-4-argon", "benchmark": "CursorBench 4.0", "benchmarkVersion": "4.0", "benchmarkId": "cursorbench-4-0", "value": 52.9, "unit": "%", "publisher": "Cursor", "sourceType": "independent", "setting": "High effort", "sourceUrl": "https://cursor.com/cursorbench", "sourceDate": "2026-10-13", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "CursorBench leaderboard table, row 'Gemini 4 Argon High', Score: 52.9%", "note": "Cursor independent run on Argon."}, {"model": "claude-haiku-5-5", "benchmark": "CursorBench 4.0", "benchmarkVersion": "4.0", "benchmarkId": "cursorbench-4-0", "value": 48.4, "unit": "%", "publisher": "Cursor", "sourceType": "independent", "setting": "Max effort", "sourceUrl": "https://cursor.com/cursorbench", "sourceDate": "2026-10-13", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "CursorBench leaderboard table, row 'Haiku 5.5 Max', Score: 48.4%", "note": "Cursor independent run on Haiku 5.5."}, {"model": "muse-spark-1-3", "benchmark": "CursorBench 4.0", "benchmarkVersion": "4.0", "benchmarkId": "cursorbench-4-0", "value": 41.6, "unit": "%", "publisher": "Cursor", "sourceType": "independent", "setting": "Max effort", "sourceUrl": "https://cursor.com/cursorbench", "sourceDate": "2026-10-13", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "CursorBench leaderboard table, row 'Muse Spark 1.3 Max', Score: 41.6%", "note": "Cursor independent run on Muse Spark 1.3."}, {"model": "claude-opus-5-5", "benchmark": "Terminal-Bench 4.0", "benchmarkVersion": "4.0", "benchmarkId": "terminal-bench-4.0", "value": 66.4, "unit": "%", "publisher": "Anthropic", "sourceType": "claim", "setting": "pass@1, vendor harness", "sourceUrl": "https://www.anthropic.com/claude-opus-5-5", "sourceDate": "2026-09-22", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Benchmark table, row 'Agentic coding Terminal-Bench 4.0', column 'Opus 5.5': 66.4%", "note": "Anthropic official launch table cell."}, {"model": "claude-fable-5-1", "benchmark": "Terminal-Bench 4.0", "benchmarkVersion": "4.0", "benchmarkId": "terminal-bench-4.0", "value": 55.8, "unit": "%", "publisher": "Anthropic", "sourceType": "claim", "setting": "pass@1, vendor harness", "sourceUrl": "https://www.anthropic.com/claude-opus-5-5", "sourceDate": "2026-09-22", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Benchmark table, row 'Agentic coding Terminal-Bench 4.0', column 'Fable 5.1': 55.8%", "note": "Printed on Opus 5.5 table under Fable 5.1 comparator column."}, {"model": "claude-opus-5", "benchmark": "Terminal-Bench 4.0", "benchmarkVersion": "4.0", "benchmarkId": "terminal-bench-4.0", "value": 52.3, "unit": "%", "publisher": "Anthropic", "sourceType": "claim", "setting": "pass@1, vendor harness", "sourceUrl": "https://www.anthropic.com/claude-opus-5-5", "sourceDate": "2026-09-22", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Benchmark table, row 'Agentic coding Terminal-Bench 4.0', column 'Opus 5': 52.3%", "note": "Anthropic's own figure for Opus 5."}, {"model": "gpt-6-astra", "benchmark": "Terminal-Bench 4.0", "benchmarkVersion": "4.0", "benchmarkId": "terminal-bench-4.0", "value": 57.9, "unit": "%", "publisher": "Anthropic", "sourceType": "rival-table", "setting": "OpenAI reported figure", "sourceUrl": "https://www.anthropic.com/claude-opus-5-5", "sourceDate": "2026-09-22", "readOn": "2026-10-14", "sourceRead": true, "origin": "quoted", "sentenceOrCell": "Benchmark table, row 'Agentic coding Terminal-Bench 4.0', column 'GPT-6 Astra': 57.9%", "note": "Anthropic table quotes OpenAI's reported figure for Astra. Survived revision 1."}, {"model": "gpt-5-6-sol", "benchmark": "Terminal-Bench 4.0", "benchmarkVersion": "4.0", "benchmarkId": "terminal-bench-4.0", "value": 37.3, "unit": "%", "publisher": "Anthropic", "sourceType": "rival-table", "setting": "OpenAI reported figure", "sourceUrl": "https://www.anthropic.com/claude-opus-5-5", "sourceDate": "2026-09-22", "readOn": "2026-10-14", "sourceRead": true, "origin": "quoted", "sentenceOrCell": "Benchmark table, row 'Agentic coding Terminal-Bench 4.0', column 'GPT-5.6 Sol': 37.3%", "note": "Anthropic table quotes OpenAI's figure."}, {"model": "claude-opus-5-5", "benchmark": "AutomationBench", "benchmarkVersion": "1.0", "benchmarkId": "automationbench", "value": 40.0, "unit": "%", "publisher": "Anthropic", "sourceType": "claim", "setting": "pass@1", "sourceUrl": "https://www.anthropic.com/claude-opus-5-5", "sourceDate": "2026-09-22", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Benchmark table, row 'Business workflows AutomationBench', column 'Opus 5.5': 40.0%", "note": "Anthropic official launch table cell."}, {"model": "gpt-6-astra", "benchmark": "AutomationBench", "benchmarkVersion": "1.0", "benchmarkId": "automationbench", "value": 41.4, "unit": "%", "publisher": "Anthropic", "sourceType": "rival-table", "setting": "OpenAI reported figure", "sourceUrl": "https://www.anthropic.com/claude-opus-5-5", "sourceDate": "2026-09-22", "readOn": "2026-10-14", "sourceRead": true, "origin": "quoted", "sentenceOrCell": "Benchmark table, row 'Business workflows AutomationBench', column 'GPT-6 Astra': 41.4%", "note": "Anthropic table quotes OpenAI Astra cell."}, {"model": "claude-fable-5-1", "benchmark": "AutomationBench", "benchmarkVersion": "1.0", "benchmarkId": "automationbench", "value": 31.4, "unit": "%", "publisher": "Anthropic", "sourceType": "claim", "setting": "pass@1", "sourceUrl": "https://www.anthropic.com/claude-opus-5-5", "sourceDate": "2026-09-22", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Benchmark table, row 'Business workflows AutomationBench', column 'Fable 5.1': 31.4%", "note": "Anthropic table cell."}, {"model": "claude-opus-5-5", "benchmark": "FrontierCode v1.1 main", "benchmarkVersion": "1.1", "benchmarkId": "frontiercode-v1-1-main", "value": 54.4, "unit": "%", "publisher": "Anthropic", "sourceType": "claim", "setting": "pass@1", "sourceUrl": "https://www.anthropic.com/claude-opus-5-5", "sourceDate": "2026-09-22", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Benchmark table, row 'Agentic coding FrontierCode v1.1 (Main)', column 'Opus 5.5': 54.4%", "note": "Anthropic official launch table cell."}, {"model": "gpt-6-astra", "benchmark": "FrontierCode v1.1 main", "benchmarkVersion": "1.1", "benchmarkId": "frontiercode-v1-1-main", "value": 53.3, "unit": "%", "publisher": "Anthropic", "sourceType": "rival-table", "setting": "OpenAI reported figure", "sourceUrl": "https://www.anthropic.com/claude-opus-5-5", "sourceDate": "2026-09-22", "readOn": "2026-10-14", "sourceRead": true, "origin": "quoted", "sentenceOrCell": "Benchmark table, row 'Agentic coding FrontierCode v1.1 (Main)', column 'GPT-6 Astra': 53.3%", "note": "Anthropic table quotes OpenAI reported cell."}, {"model": "claude-fable-5-1", "benchmark": "FrontierCode v1.1 main", "benchmarkVersion": "1.1", "benchmarkId": "frontiercode-v1-1-main", "value": 50.3, "unit": "%", "publisher": "Anthropic", "sourceType": "claim", "setting": "pass@1", "sourceUrl": "https://www.anthropic.com/claude-opus-5-5", "sourceDate": "2026-09-22", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Benchmark table, row 'Agentic coding FrontierCode v1.1 (Main)', column 'Fable 5.1': 50.3%", "note": "Anthropic table cell under Fable 5.1 column."}, {"model": "claude-sonnet-5-5", "benchmark": "Terminal-Bench 4.0", "benchmarkVersion": "4.0", "benchmarkId": "terminal-bench-4.0", "value": 70.6, "unit": "%", "publisher": "Anthropic", "sourceType": "claim", "setting": "pass@1, vendor harness", "sourceUrl": "https://www.anthropic.com/claude-sonnet-5-5", "sourceDate": "2026-09-28", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Benchmark table, row 'Agentic coding Terminal-Bench 4.0', column 'Sonnet 5.5': 70.6%", "note": "Anthropic official Sonnet 5.5 launch page benchmark table cell. Re-pointed from Opus 5.5 page in revision 3."}, {"model": "claude-sonnet-5-5", "benchmark": "FrontierCode v1.1 main", "benchmarkVersion": "1.1", "benchmarkId": "frontiercode-v1-1-main", "value": 52.1, "unit": "%", "publisher": "Anthropic", "sourceType": "claim", "setting": "Xhigh effort", "sourceUrl": "https://www.anthropic.com/claude-sonnet-5-5", "sourceDate": "2026-09-28", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Benchmark table, row 'Agentic coding FrontierCode 1.1 (Main)', column 'Sonnet 5.5': 52.1% Xhigh", "note": "Anthropic official Sonnet 5.5 launch page benchmark table cell. Re-pointed from Opus 5.5 page in revision 3."}, {"model": "gpt-6-1-sol", "benchmark": "DeepSWE v1.1", "benchmarkVersion": "1.1", "benchmarkId": "deepswe-v1-1", "value": 75.2, "unit": "%", "publisher": "OpenAI", "sourceType": "claim", "setting": "derived calculation", "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-sol/", "sourceDate": "2026-09-29", "readOn": "2026-10-14", "sourceRead": false, "origin": "derived", "sentenceOrCell": "Launch post text stating a 6.4 percentage point gain over GPT-6 Sol's 68.8% (68.8 + 6.4 = 75.2%)", "note": "Derived from explicit gain statement. OpenAI page returned 403 on automated fetch."}, {"model": "gpt-6-astra", "benchmark": "OSWorld 2.0 offline partial", "benchmarkVersion": "2.0", "benchmarkId": "osworld-2-0-offline-partial", "value": 72.6, "unit": "%", "publisher": "OpenAI", "sourceType": "claim", "setting": "screen vision + actions", "sourceUrl": "https://openai.com/index/gpt-6-astra-system-card/", "sourceDate": "2026-09-03", "readOn": "2026-10-14", "sourceRead": false, "origin": "quoted", "sentenceOrCell": "Astra System Card, Computer-Use evaluation table, row 'OSWorld 2.0 offline partial', column 'GPT-6 Astra': 72.6%", "note": "OpenAI Astra page returned 403 on automated fetch; quoted from verified analyst reproduction."}, {"model": "gpt-6-sol", "benchmark": "DeepSWE v1.1", "benchmarkVersion": "1.1", "benchmarkId": "deepswe-v1-1", "value": 68.8, "unit": "%", "publisher": "OpenAI", "sourceType": "claim", "setting": "standard harness", "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/", "sourceDate": "2026-09-22", "readOn": "2026-10-14", "sourceRead": false, "origin": "quoted", "sentenceOrCell": "Launch post coding evaluation table, row 'DeepSWE v1.1', column 'GPT-6 Sol': 68.8%", "note": "Quoted from 22 Sep Sol launch reproduction; OpenAI page returned 403."}, {"model": "gpt-6-luna", "benchmark": "DeepSWE v1.1", "benchmarkVersion": "1.1", "benchmarkId": "deepswe-v1-1", "value": 66.6, "unit": "%", "publisher": "OpenAI", "sourceType": "claim", "setting": "standard harness", "sourceUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/", "sourceDate": "2026-09-22", "readOn": "2026-10-14", "sourceRead": false, "origin": "quoted", "sentenceOrCell": "Launch post coding evaluation table, row 'DeepSWE v1.1', column 'GPT-6 Luna': 66.6%", "note": "Quoted from 22 Sep Luna launch reproduction; OpenAI page returned 403."}, {"model": "muse-wonder", "benchmark": "DeepSWE v1.1", "benchmarkVersion": "1.1", "benchmarkId": "deepswe-v1-1", "value": 78.8, "unit": "%", "publisher": "Meta", "sourceType": "claim", "setting": "Datacurve result, cited by Meta", "sourceUrl": "https://dev.meta.ai/resources/blog/build-with-muse-wonder", "sourceDate": "2026-10-12", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Evaluation table, row 'DeepSWE v1.1', column 'Muse Wonder': 78.8%", "note": "Official Meta developer blog benchmark comparison table cell."}, {"model": "muse-wonder-full", "benchmark": "DeepSWE v1.1", "benchmarkVersion": "1.1", "benchmarkId": "deepswe-v1-1", "value": 79.0, "unit": "%", "publisher": "Meta", "sourceType": "claim", "setting": "Datacurve result, cited by Meta", "sourceUrl": "https://dev.meta.ai/resources/blog/build-with-muse-wonder", "sourceDate": "2026-10-12", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Evaluation table, row 'DeepSWE v1.1', column 'Muse Wonder Full': 79.0%", "note": "Official Meta developer blog benchmark comparison table cell."}, {"model": "muse-wonder", "benchmark": "SWE-Marathon", "benchmarkVersion": "1.0", "benchmarkId": "swe-marathon", "value": 53.1, "unit": "%", "publisher": "Meta", "sourceType": "claim", "setting": "standard harness", "sourceUrl": "https://dev.meta.ai/resources/blog/build-with-muse-wonder", "sourceDate": "2026-10-12", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Evaluation table, row 'SWE-Marathon', column 'Muse Wonder': 53.1%", "note": "Official Meta developer blog benchmark comparison table cell."}, {"model": "muse-wonder-full", "benchmark": "SWE-Marathon", "benchmarkVersion": "1.0", "benchmarkId": "swe-marathon", "value": 57.5, "unit": "%", "publisher": "Meta", "sourceType": "claim", "setting": "xhigh effort", "sourceUrl": "https://dev.meta.ai/resources/blog/build-with-muse-wonder", "sourceDate": "2026-10-12", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Evaluation table, row 'SWE-Marathon', column 'Muse Wonder Full': 57.5% (xhigh)", "note": "Official Meta developer blog benchmark comparison table cell (marked xhigh)."}, {"model": "muse-wonder", "benchmark": "AA Intelligence Index v4.3", "benchmarkVersion": "4.3", "benchmarkId": "aa-intelligence-index-v4-3", "value": 52.0, "unit": "pts", "publisher": "Artificial Analysis", "sourceType": "independent", "setting": "standard evaluation suite", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Article text: \"Muse Wonder (max) gains 4 Intelligence Index points and lands at 52\"", "note": "Direct read from Artificial Analysis 12 Oct 2026 article."}, {"model": "muse-wonder-full", "benchmark": "AA Intelligence Index v4.3", "benchmarkVersion": "4.3", "benchmarkId": "aa-intelligence-index-v4-3", "value": 56.0, "unit": "pts", "publisher": "Artificial Analysis", "sourceType": "independent", "setting": "standard evaluation suite", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Article text: \"Muse Wonder Full (max) improves on Muse Spark 1.3 (max) across all ten Intelligence Index evaluations, gaining 8 points to 56\"", "note": "Direct read from Artificial Analysis 12 Oct 2026 article."}, {"model": "muse-wonder", "benchmark": "AA Coding Agents Index", "benchmarkVersion": "1.0", "benchmarkId": "aa-coding-agents-index", "value": 63.0, "unit": "pts", "publisher": "Artificial Analysis", "sourceType": "independent", "setting": "Muse Code harness", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Article text: \"Muse Wonder (max) scores 63\"", "note": "Direct read from Artificial Analysis 12 Oct 2026 article."}, {"model": "muse-wonder-full", "benchmark": "AA Coding Agents Index", "benchmarkVersion": "1.0", "benchmarkId": "aa-coding-agents-index", "value": 68.0, "unit": "pts", "publisher": "Artificial Analysis", "sourceType": "independent", "setting": "Muse Code harness", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Article text: \"Muse Wonder Full achieves 68 on the Artificial Analysis Coding Agents Index at max effort in Muse Code\"", "note": "Direct read from Artificial Analysis 12 Oct 2026 article."}, {"model": "claude-sonnet-5-5", "benchmark": "AA Coding Agents Index", "benchmarkVersion": "1.0", "benchmarkId": "aa-coding-agents-index", "value": 68.0, "unit": "pts", "publisher": "Artificial Analysis", "sourceType": "independent", "setting": "Claude Code harness", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Article text: \"alongside Claude Code with Sonnet 5.5 (max, 68)\"", "note": "Direct read from Artificial Analysis 12 Oct 2026 article."}, {"model": "muse-wonder", "benchmark": "Terminal-Bench 4.0, Artificial Analysis", "benchmarkVersion": "4.0", "benchmarkId": "terminal-bench-4-0-aa", "value": 52.0, "unit": "%", "publisher": "Artificial Analysis", "sourceType": "independent", "setting": "AA evaluation harness", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Article text: \"notable improvements vs. Muse Spark 1.3 (max) in Terminal-Bench 4.0 (33% to 52%)\"", "note": "Direct read from Artificial Analysis article text."}, {"model": "muse-wonder-full", "benchmark": "Terminal-Bench 4.0, Artificial Analysis", "benchmarkVersion": "4.0", "benchmarkId": "terminal-bench-4-0-aa", "value": 57.0, "unit": "%", "publisher": "Artificial Analysis", "sourceType": "independent", "setting": "AA evaluation harness", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Article text: \"Terminal-Bench 4.0 (+24 points, 33% to 57%)\"", "note": "Direct read from Artificial Analysis article text."}, {"model": "gemini-4-argon", "benchmark": "AA cost per Intelligence Index task", "benchmarkVersion": "4.3", "benchmarkId": "aa-cost-per-task", "value": 1.99, "unit": "usd", "publisher": "Artificial Analysis", "sourceType": "independent", "setting": "standard Intelligence Index run", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Article text, cost comparison prose: \"Gemini 4 Argon (high, $1.99)\"", "note": "Direct read from Artificial Analysis cost comparison prose."}, {"model": "gpt-6-1-sol", "benchmark": "AA cost per Intelligence Index task", "benchmarkVersion": "4.3", "benchmarkId": "aa-cost-per-task", "value": 0.72, "unit": "usd", "publisher": "Artificial Analysis", "sourceType": "independent", "setting": "standard Intelligence Index run", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Article text, cost comparison prose: \"GPT-6.1 Sol (max, $0.72)\"", "note": "Direct read from Artificial Analysis cost comparison prose."}, {"model": "gpt-6-astra", "benchmark": "AA cost per Intelligence Index task", "benchmarkVersion": "4.3", "benchmarkId": "aa-cost-per-task", "value": 3.26, "unit": "usd", "publisher": "Artificial Analysis", "sourceType": "independent", "setting": "standard Intelligence Index run", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Article text, cost comparison prose: \"GPT-6 Astra (max, $3.26)\"", "note": "Direct read from Artificial Analysis cost comparison prose."}, {"model": "claude-sonnet-5-5", "benchmark": "AA cost per Intelligence Index task", "benchmarkVersion": "4.3", "benchmarkId": "aa-cost-per-task", "value": 5.46, "unit": "usd", "publisher": "Artificial Analysis", "sourceType": "independent", "setting": "standard Intelligence Index run with fallback", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "readOn": "2026-10-14", "sourceRead": true, "origin": "measured", "sentenceOrCell": "Article text, cost comparison prose: \"Claude Sonnet 5.5 (max w/ fallback, $5.46)\"", "note": "Direct read from Artificial Analysis cost comparison prose."}]};
+        console.warn('Fallback to embedded Revision 4 data:', e);
+        DATA = window.__FALLBACK_DATA__;
       }
-      renderBenchmarkTab('terminal-bench-4.0', 'terminal-bars');
-      renderBenchmarkTab('cursorbench-4-0', 'cursorbench-bars');
-      renderBenchmarkTab('deepswe-v1-1', 'deepswe-bars');
-      renderBenchmarkTab('automationbench', 'automation-bars');
+      renderAll();
+    }
+
+    function renderAll() {
+      if (!DATA) return;
+      document.getElementById('receipt-count').textContent = DATA.records.length;
+
+      // View 1: Terminal-Bench Suite
+      renderBenchmarkGroup(['terminal-bench-4.0'], 'terminal-40-bars');
+      renderBenchmarkGroup(['terminal-bench-4-1'], 'terminal-41-bars');
+      renderBenchmarkGroup(['terminal-bench-4-0-aa'], 'terminal-aa-bars');
+      renderBenchmarkGroup(['terminal-bench-science-0-1'], 'terminal-sci-bars');
+
+      // View 2: CursorBench 4.0
+      renderBenchmarkGroup(['cursorbench-4-0'], 'cursorbench-bars');
+
+      // View 3: SWE & Coding
+      renderBenchmarkGroup(['frontierswe-v2'], 'frontierswe-bars');
+      renderBenchmarkGroup(['frontiercode-2-0'], 'frontiercode2-bars');
+      renderBenchmarkGroup(['deepswe-v1-1'], 'deepswe-bars');
+      renderBenchmarkGroup(['swe-sweep'], 'swesweep-bars');
+      renderBenchmarkGroup(['frontiercode-v1-1-main'], 'frontiercode1-bars');
+      renderBenchmarkGroup(['swe-marathon'], 'swemarathon-bars');
+
+      // View 4: Automation & Computer Use
+      renderBenchmarkGroup(['automationbench'], 'automation-bars');
+      renderBenchmarkGroup(['automationbench-aa'], 'automation-aa-bars');
+      renderBenchmarkGroup(['agents-last-exam-v1-1'], 'ale-bars');
+      renderBenchmarkGroup(['osworld-2-1', 'osworld-2-0-offline-partial'], 'osworld-bars');
+
+      // View 5: Independent Indexes & Security
+      renderBenchmarkGroup(['aa-intelligence-index-v5-0', 'aa-intelligence-index-v4-3'], 'aa-intel-bars');
+      renderBenchmarkGroup(['vals-index'], 'vals-bars');
+      renderBenchmarkGroup(['aa-coding-agents-index', 'aa-cost-per-task'], 'aa-coding-cost-bars');
+      renderBenchmarkGroup(['sec-bench-pro', 'cwe-bench-v1', 'exploitgym', 'vals-finance-agent-v2', 'harvey-legal-agent'], 'domain-bars');
+
+      // View 6: Models Grid
+      renderModels();
+
+      // View 7: Full Table
       renderTable();
     }
 
     function switchTab(id) {
-      ['terminal', 'cursorbench', 'deepswe', 'automation', 'table', 'notes'].forEach(t => {
+      TABS.forEach(t => {
         const view = document.getElementById('view-' + t);
         const btn = document.getElementById('tab-btn-' + t);
+        if (!view || !btn) return;
         if (t === id) {
           view.classList.remove('hidden');
           btn.classList.add('bg-[#3987e5]', 'text-white');
@@ -200,51 +387,99 @@
       });
     }
 
-    function renderBenchmarkTab(benchId, containerId) {
+    function badgeClass(sourceType) {
+      if (sourceType === 'claim') return 'bg-[#3987e5]/10 text-[#3987e5] border border-[#3987e5]/20';
+      if (sourceType === 'independent') return 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20';
+      return 'bg-amber-500/10 text-amber-400 border border-amber-500/20';
+    }
+
+    function renderBenchmarkGroup(benchIds, containerId) {
       const container = document.getElementById(containerId);
       if (!container) return;
       container.innerHTML = '';
 
-      const rows = DATA.records.filter(r => r.benchmarkId === benchId);
-      rows.forEach(r => {
-        const m = DATA.models.find(x => x.slug === r.model) || { name: r.model, maker: '' };
-        const card = document.createElement('div');
-        card.className = "p-4 bg-[#0c1219] border border-[#263244] rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs";
-        card.innerHTML = `
+      const multi = benchIds.length > 1;
+      benchIds.forEach(benchId => {
+        const rows = DATA.records
+          .filter(r => r.benchmarkId === benchId)
+          .slice()
+          .sort((a, b) => benchId === 'aa-cost-per-task' ? a.value - b.value : b.value - a.value);
+
+        rows.forEach(r => {
+          const m = DATA.models.find(x => x.slug === r.model) || { name: r.model, maker: '' };
+          const card = document.createElement('div');
+          card.className = "p-3.5 bg-[#0c1219] border border-[#263244] rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs";
+          const valStr = r.unit === 'usd' ? ('$' + r.value.toFixed(2)) : (r.value + (r.unit === 'pts' ? ' pts' : r.unit));
+          card.innerHTML = `
+            <div>
+              <div class="font-bold text-[#e6ecf3]">
+                ${m.name}
+                <span class="text-[#8592a5] font-normal">(${r.publisher}${multi ? ' · ' + r.benchmark : ''})</span>
+              </div>
+              <div class="text-[11px] text-[#8592a5] mt-0.5">${r.setting || 'standard'} · <span class="italic font-mono">${r.sentenceOrCell}</span></div>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono ${badgeClass(r.sourceType)}">${r.sourceType}</span>
+              <a href="${r.sourceUrl}" target="_blank" class="font-mono font-bold text-base text-emerald-400 hover:underline">${valStr}</a>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      });
+    }
+
+    function renderModels() {
+      const grid = document.getElementById('models-grid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      const newSlugs = new Set(['gemini-4-carbon', 'gemini-4-hydrogen', 'claude-fable-5-2', 'gpt-6-1-terra', 'muse-spark-open', 'muse-ember']);
+      DATA.models.forEach(m => {
+        const isNew = newSlugs.has(m.slug);
+        const count = DATA.records.filter(r => r.model === m.slug).length;
+        const div = document.createElement('div');
+        div.className = "p-4 bg-[#0c1219] border " + (isNew ? "border-emerald-500/40" : "border-[#263244]") + " rounded-xl flex flex-col justify-between gap-2 text-xs";
+        div.innerHTML = `
           <div>
-            <div class="font-bold text-[#e6ecf3]">${m.name} <span class="text-[#8592a5] font-normal">(${r.publisher})</span></div>
-            <div class="text-[11px] text-[#8592a5] mt-0.5">${r.setting || 'standard'} · <span class="italic font-mono">${r.sentenceOrCell}</span></div>
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-bold text-sm text-[#e6ecf3]">${m.name}</span>
+              ${isNew ? '<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">NEW · REV 4</span>' : '<span class="text-[10px] font-mono text-[#8592a5]">' + m.maker + '</span>'}
+            </div>
+            <div class="text-[11px] font-mono text-[#8592a5] mt-1">${m.maker} · ${m.family} · Released: ${m.releaseDate || ' Prior baseline'}</div>
+            <div class="text-[11px] text-[#8592a5] mt-2 leading-relaxed">${m.note || ''}</div>
           </div>
-          <div class="flex items-center gap-3">
-            <span class="px-2 py-0.5 rounded text-[10px] font-mono ${r.sourceType==='claim'?'bg-[#3987e5]/10 text-[#3987e5]':'bg-amber-500/10 text-amber-400'}">${r.sourceType}</span>
-            <span class="font-mono font-bold text-base text-emerald-400">${r.value}${r.unit}</span>
+          <div class="pt-2 mt-2 border-t border-[#263244] flex items-center justify-between text-[11px] font-mono text-[#8592a5]">
+            <span>Context: ${m.contextLimit || 'Unspecified'}</span>
+            <span class="text-emerald-400 font-semibold">${count} receipts</span>
           </div>
         `;
-        container.appendChild(card);
+        grid.appendChild(div);
       });
     }
 
     function renderTable(filter = '') {
       const tbody = document.getElementById('records-table-body');
       tbody.innerHTML = '';
+      const q = filter.toLowerCase();
 
       const filtered = DATA.records.filter(r => 
-        r.model.toLowerCase().includes(filter.toLowerCase()) ||
-        r.benchmark.toLowerCase().includes(filter.toLowerCase()) ||
-        r.publisher.toLowerCase().includes(filter.toLowerCase()) ||
-        (r.sentenceOrCell && r.sentenceOrCell.toLowerCase().includes(filter.toLowerCase()))
+        r.model.toLowerCase().includes(q) ||
+        r.benchmark.toLowerCase().includes(q) ||
+        r.publisher.toLowerCase().includes(q) ||
+        (r.setting && r.setting.toLowerCase().includes(q)) ||
+        (r.sentenceOrCell && r.sentenceOrCell.toLowerCase().includes(q))
       );
 
       filtered.forEach(r => {
         const tr = document.createElement('tr');
         tr.className = "hover:bg-white/5 transition-all";
+        const valStr = r.unit === 'usd' ? ('$' + r.value.toFixed(2)) : (r.value + (r.unit === 'pts' ? ' pts' : r.unit));
         tr.innerHTML = `
           <td class="p-3 font-semibold font-mono text-[#e6ecf3]">${r.model}</td>
-          <td class="p-3">${r.benchmark}</td>
-          <td class="p-3 text-right font-mono font-bold text-emerald-400">${r.value}${r.unit}</td>
+          <td class="p-3">${r.benchmark}<div class="text-[10px] text-[#8592a5] font-mono">${r.setting || ''}</div></td>
+          <td class="p-3 text-right font-mono font-bold text-emerald-400">${valStr}</td>
           <td class="p-3">${r.publisher}</td>
-          <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-mono ${r.sourceType==='claim'?'bg-[#3987e5]/10 text-[#3987e5]':'bg-amber-500/10 text-amber-400'}">${r.sourceType}</span></td>
-          <td class="p-3 text-[#8592a5] max-w-xs font-mono text-[11px]">${r.sentenceOrCell}</td>
+          <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-mono ${badgeClass(r.sourceType)}">${r.sourceType}</span></td>
+          <td class="p-3 text-[#8592a5] max-w-md font-mono text-[11px]">${r.sentenceOrCell}</td>
           <td class="p-3"><a href="${r.sourceUrl}" target="_blank" class="text-[#3987e5] hover:underline font-mono">receipt ↗</a></td>
         `;
         tbody.appendChild(tr);

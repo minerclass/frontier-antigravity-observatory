@@ -1,11 +1,12 @@
 {
-  "status": "ready for review; revision 3 local only",
+  "status": "ready for review; revision 4 local only",
   "id": "antigravity-surface-arm",
   "displayName": "Antigravity \u00b7 Surface ARM",
-  "model": "Gemini 3.8 Flash (High)",
+  "model": "Gemini 4 Argon (High)",
+  "priorRevisionsModel": "Gemini 3.8 Flash (High)",
   "computer": "surface-arm",
-  "compileDate": "2026-10-14",
-  "revision": 3,
+  "compileDate": "2026-11-12",
+  "revision": 4,
   "repository": "minerclass/frontier-antigravity-observatory",
   "pageUrl": "https://minerclass.github.io/frontier-antigravity-observatory/",
   "dataUrls": [
